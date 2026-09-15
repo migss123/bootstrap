@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NERV // Terminal de Evangelion</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		:root {
+			--rei-blue: #5d7892;
+			--rei-blue-dark: #263b51;
+			--rei-blue-light: #dce7ef;
+			--rei-red: #b73540;
+			--rei-white: #f7f9fa;
+			--rei-ink: #18212b;
+		}
+
+		body {
+			min-height: 100vh;
+			color: var(--rei-ink);
+			background: var(--rei-blue-light);
+			font-family: "Trebuchet MS", Arial, sans-serif;
+		}
+
+		.site-header {
+			border-bottom: 5px solid var(--rei-red);
+			background: var(--rei-blue-dark);
+		}
+
+		.brand-mark {
+			color: var(--rei-white);
+			letter-spacing: .14em;
+			font-weight: 900;
+		}
+
+		.site-nav .nav-link {
+			color: rgba(247, 249, 250, .8);
+			font-size: .85rem;
+			letter-spacing: .08em;
+		}
+
+		.site-nav .nav-link:hover,
+		.site-nav .nav-link:focus {
+			color: var(--rei-white);
+		}
+
+		.navbar-toggler {
+			border-color: rgba(247, 249, 250, .55);
+		}
+
+		.navbar-toggler-icon {
+			filter: invert(1);
+		}
+
+		.status-light {
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background: var(--rei-red);
+			box-shadow: 0 0 12px var(--rei-red);
+		}
+
+		.page-shell {
+			max-width: 1180px;
+		}
+
+		.jumbotron-eva {
+			min-height: 280px;
+			position: relative;
+			overflow: hidden;
+			color: white;
+			background: linear-gradient(115deg, var(--rei-blue-dark) 0 48%, var(--rei-blue) 48% 78%, var(--rei-red) 78%);
+			border: 3px solid var(--rei-ink);
+			box-shadow: 10px 10px 0 var(--rei-ink);
+		}
+
+		.jumbotron-eva::after {
+			content: "01";
+			position: absolute;
+			right: 4%;
+			bottom: -45px;
+			color: rgba(255, 255, 255, .12);
+			font-size: 11rem;
+			line-height: 1;
+			font-weight: 900;
+		}
+
+		.eyebrow {
+			color: var(--rei-blue-light);
+			letter-spacing: .18em;
+			font-size: .8rem;
+			font-weight: 900;
+		}
+
+		.panel {
+			height: 100%;
+			border: 3px solid var(--rei-ink);
+			background: var(--rei-white);
+			box-shadow: 6px 6px 0 var(--rei-blue);
+		}
+
+		.panel-dark {
+			color: white;
+			background: var(--rei-blue-dark);
+			box-shadow: 6px 6px 0 var(--rei-red);
+		}
+
+		.panel-orange {
+			background: var(--rei-blue);
+			box-shadow: 6px 6px 0 var(--rei-ink);
+			color: var(--rei-white);
+		}
+
+		.panel-label {
+			color: var(--rei-red);
+			letter-spacing: .1em;
+			font-size: .75rem;
+			font-weight: 900;
+		}
+
+		.panel-dark .panel-label { color: var(--rei-blue-light); }
+
+		.unit-badge {
+			display: inline-block;
+			padding: .3rem .5rem;
+			color: white;
+			background: var(--rei-red);
+			font-size: .75rem;
+			font-weight: 900;
+		}
+
+		.grid-row { margin-bottom: 1.5rem; }
+		.grid-row:last-child { margin-bottom: 0; }
+
+		@media (max-width: 767.98px) {
+			.jumbotron-eva { box-shadow: 6px 6px 0 var(--rei-ink); }
+			.jumbotron-eva::after { font-size: 7rem; }
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container page-shell">
+				<a class="navbar-brand brand-mark" href="#inicio">NERV // TOKYO-3</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir navegação">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNavigation">
+					<ul class="navbar-nav ms-auto site-nav align-items-lg-center">
+						<li class="nav-item"><a class="nav-link" href="#pilotos">Pilotos</a></li>
+						<li class="nav-item"><a class="nav-link" href="#unidades">Unidades</a></li>
+						<li class="nav-item"><a class="nav-link" href="#arquivo">Arquivo</a></li>
+						<li class="nav-item ms-lg-3 text-white small"><span class="status-light me-2"></span>SISTEMA ONLINE</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main id="inicio" class="container page-shell py-5">
+		<!-- Linha 1: coluna de tamanho 12 com o jumbotron. -->
+		<div class="row grid-row">
+			<div class="col-12">
+				<section class="jumbotron-eva p-4 p-md-5 d-flex align-items-center">
+					<div class="position-relative z-1">
+						<div class="eyebrow mb-3">CLASSIFIED // OPERATION YASHIMA</div>
+						<h1 class="display-4 fw-bold mb-3">NEON GENESIS<br>EVANGELION</h1>
+						<p class="lead mb-0" style="max-width: 560px;">Um painel de controle para os pilotos, unidades e mistérios de Tokyo-3.</p>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<!-- Linha 2: duas colunas de tamanho 6. -->
+		<div id="pilotos" class="row g-4 grid-row">
+			<div class="col-12 col-md-6">
+				<article class="panel p-4">
+					<div class="panel-label mb-2">PILOTO DESIGNADO</div>
+					<h2 class="h3 fw-bold">Shinji Ikari</h2>
+					<p class="mb-3">Aquele que deve pilotar. Sincronização emocional em análise.</p>
+					<span class="unit-badge">EVA-01 // 91%</span>
+				</article>
+			</div>
+			<div class="col-12 col-md-6">
+				<article class="panel panel-dark p-4">
+					<div class="panel-label mb-2">COMANDO DE CAMPO</div>
+					<h2 class="h3 fw-bold">Misato Katsuragi</h2>
+					<p class="mb-3">Estratégia, café e decisões impossíveis sob pressão.</p>
+					<span class="unit-badge">ALERTA MAGI // ATIVO</span>
+				</article>
+			</div>
+		</div>
+
+		<!-- Linha 3: três colunas de tamanho 4. -->
+		<div id="unidades" class="row g-4 grid-row">
+			<div class="col-12 col-md-4">
+				<article class="panel panel-orange p-4">
+					<div class="panel-label mb-2">UNIDADE 00</div>
+					<h2 class="h4 fw-bold">Rei Ayanami</h2>
+					<p class="mb-0">Sincronização: 76%<br>Estado: em espera</p>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="panel p-4">
+					<div class="panel-label mb-2">UNIDADE 02</div>
+					<h2 class="h4 fw-bold">Asuka Langley</h2>
+					<p class="mb-0">Sincronização: 88%<br>Estado: pronta</p>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="panel panel-dark p-4">
+					<div class="panel-label mb-2">AMBIENTE</div>
+					<h2 class="h4 fw-bold">Tokyo-3</h2>
+					<p class="mb-0">Ângulo de alerta: 14<br>AT-Field: detectado</p>
+				</article>
+			</div>
+		</div>
+
+		<!-- Linha 4: colunas de tamanho 4 e 8. -->
+		<div class="row g-4 grid-row">
+			<div class="col-12 col-md-4">
+				<article class="panel p-4">
+					<div class="panel-label mb-2">STATUS</div>
+					<h2 class="h4 fw-bold">Próximo impacto</h2>
+					<p class="mb-0">A ameaça se aproxima. Todos os sistemas aguardam sua decisão.</p>
+				</article>
+			</div>
+			<div id="arquivo" class="col-12 col-md-8">
+				<article class="panel panel-dark p-4">
+					<div class="panel-label mb-2">ARQUIVO NERV // 04</div>
+					<h2 class="h4 fw-bold">“Deus está em seu céu. Tudo está certo no mundo.”</h2>
+					<p class="mb-0">Entre no Entry Plug e encare o desconhecido. A humanidade depende da próxima sincronização.</p>
+				</article>
+			</div>
+		</div>
+	</main>
+
+	<footer class="container page-shell pb-4 text-center text-muted small">NERV PUBLIC INFORMATION // CLASSIFIED</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
